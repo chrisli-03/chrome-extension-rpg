@@ -3,3 +3,8 @@
     color: #00a0b0;
     text-decoration: none;
 }
+
+.title {
+    white-space: nowrap;
+    font-size: 1rem;
+}
