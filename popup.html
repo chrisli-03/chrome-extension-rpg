@@ -2,11 +2,13 @@
 <html lang="en">
 <head>
   <link href="styles/common.css" rel="stylesheet">
+  <script src="data/mob.js"></script>
   <script src="popup.js"></script>
 </head>
 <body>
 <article>
-  <section class="title"><b>Status:</b> Idle</section>
+  <section class="title"><b>Status:</b> <span id="mob"></span></section>
+  <a id="loot" class="link hidden" href="pages/loot/index.html">Get Loot</a>
   <section>ATK: <span id="atk"></span></section>
   <section>DEF: <span id="def"></span></section>
   <section>SPD: <span id="spd"></span></section>
