@@ -8,6 +8,21 @@ window.addEventListener('load', function () {
 
     const mobsKilled = calculateLoot(character, mobType, fightingTime)
     document.querySelector('#count').innerText = mobsKilled
+    const loots = new Map()
+    for (let i = 0; i < mobsKilled; i++) {
+      mobType.drop.forEach(item => {
+        const roll = Math.floor(Math.random() * 10001);
+        if (roll <= item.chance) {
+          if (!loots.has(item.id)) loots.set(item.id, 1)
+          else loots.set(item.id, loots.get(item.id) + 1)
+        }
+      })
+    }
+    const temp = []
+    loots.forEach((value, key) => {
+      temp.push(`${item.getItem(key).name} x${value}`)
+    })
+    document.querySelector('#loot').innerText = temp.join('\n')
 
     chrome.storage.sync.remove('mob')
   })
@@ -27,7 +42,6 @@ function calculateLoot(character, mob, fightingTime) {
 function fightDuration(attacker, target) {
   let targetHP = target.hp
   const timeBetweenAtk = 1000 * (0.999 ** attacker.spd)
-  const dmgPerHit = attacker.atk - target.def
-  let duration = timeBetweenAtk * targetHP / (dmgPerHit)
-  return duration
+  const dmgPerHit = Math.max(attacker.atk - target.def, 1)
+  return timeBetweenAtk * targetHP / (dmgPerHit)
 }
