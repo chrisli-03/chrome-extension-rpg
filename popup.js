@@ -1,8 +1,9 @@
 function createNewCharacter() {
   const newCharacter = {
+    hp: 10,
     atk: 1,
-    def: 1,
-    spd: 1
+    def: 0,
+    spd: 0
   }
   chrome.storage.sync.set({ stat: newCharacter }, function() {
     message('Settings saved')
