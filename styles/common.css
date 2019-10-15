@@ -23,3 +23,7 @@ ul {
 .nowrap {
     white-space: nowrap;
 }
+
+.red {
+    color: #f00;
+}

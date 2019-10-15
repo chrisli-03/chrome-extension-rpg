@@ -2,7 +2,7 @@ window.addEventListener('load', function () {
   chrome.storage.sync.get(['stat', 'mob', 'inventory'], function(result) {
     const character = result.stat
     const mobType = mob.getMob(result.mob.id)
-    const fightingTime  =(new Date()).getTime() - result.mob.timestamp
+    const fightingTime = (new Date()).getTime() - result.mob.timestamp
     document.querySelector('#mob').innerText = mobType.name
     document.querySelector('#time').innerText = fightingTime
 

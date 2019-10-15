@@ -2,11 +2,30 @@
 <html lang="en">
 <head>
   <link href="../../styles/common.css" rel="stylesheet">
+  <script src="script.js"></script>
 </head>
 <body>
 <article>
   <div>Training</div>
   <a class="link" href="../../popup.html">Back To Home</a>
+  <section class="nowrap">Training cost <span id="cost"></span></section>
+  <section class="nowrap">
+    HP: <span id="hp_val"></span>
+    <a class="link train" id="hp" href="#" data-stat="hp" style="display: inline-block">Train HP</a>
+  </section>
+  <section class="nowrap">
+    ATK: <span id="atk_val"></span>
+    <a class="link train" id="atk" href="#" data-stat="atk" style="display: inline-block">Train ATK</a>
+  </section>
+  <section class="nowrap">
+    DEF: <span id="def_val"></span>
+    <a class="link train" id="def" href="#" data-stat="def" style="display: inline-block">Train DEF</a>
+  </section>
+  <section class="nowrap">
+    SPD: <span id="spd_val"></span>
+    <a class="link train" id="spd" href="#" data-stat="spd" style="display: inline-block">Train SPD</a>
+  </section>
+  <section id="error" class="red hidden"></section>
 </article>
 </body>
 </html>
