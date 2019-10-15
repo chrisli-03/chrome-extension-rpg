@@ -25,7 +25,8 @@ window.addEventListener('load', function () {
 
     if (result.mob) {
       document.querySelector('#mob').innerText = `Fighting ${mob.getMob(result.mob.id).name}`
-      document.querySelector('#loot').classList.toggle('hidden')
+      document.querySelector('#loot').classList.remove('hidden')
+      document.querySelector('#map').classList.add('hidden')
     } else {
       document.querySelector('#mob').innerText = 'Idle'
     }
