@@ -56,5 +56,5 @@ function fightDuration(attacker, target) {
   let targetHP = target.hp
   const timeBetweenAtk = 1000 * (0.999 ** attacker.spd)
   const dmgPerHit = Math.max(attacker.atk - target.def, 1)
-  return timeBetweenAtk * targetHP / (dmgPerHit)
+  return timeBetweenAtk * (Math.ceil(targetHP / dmgPerHit) - 1) + 1000 // 1000 is mob spawn time
 }
