@@ -28,7 +28,7 @@ window.addEventListener('load', function () {
 
     Array.prototype.forEach.call(document.querySelectorAll('.train'), function(elem) {
       elem.addEventListener('click', function(e) {
-        if (result.inventory[tokenType] < cost) {
+        if (!result.inventory[tokenType] || result.inventory[tokenType] < cost) {
           const error = document.querySelector('#error')
           error.innerText = 'Not Enough Token'
           error.classList.remove('hidden')
